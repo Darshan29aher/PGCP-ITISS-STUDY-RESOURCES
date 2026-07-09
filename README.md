@@ -77,13 +77,13 @@ The **Important Things!** file lists quick references and key points useful for 
 
 ## 🚀 Contributions and Usage
 
-These notes are shared to support my classmates and anyone preparing for the DITISS course. Feel free to use them for reference. If you spot any errors or have suggestions, you're welcome to open an issue or fork the repo and create a pull request.
+These notes are shared to support my classmates and anyone preparing for the PGCP-ITISS course. Feel free to use them for reference. If you spot any errors or have suggestions, you're welcome to open an issue or fork the repo and create a pull request.
 
 ---
 
 ## 🎯 About
 
-This repository reflects my learning journey through the PG-DITISS course at Sunbeam Institute. I will continue updating it until the completion of the program.
+This repository reflects my learning journey through the PGCP-DITISS course at IACSD  Institute. I will continue updating it until the completion of the program.
 
 Happy learning! 💻
 
