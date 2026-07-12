@@ -1,0 +1,49 @@
+# Socket Programming
+
+Server Side ::
+Create a server socket which will wait for requests from client
+We need IP address, Port no, and protocol (TCP/IP or UDP)
+
+
+
+
+import socket
+tcpsock=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+tcpsock.bind("0.0.0.0",9000)
+tcpsock.listen() #start the listening mode
+(clientSock, (cip,port)) = tcpsock.accept() #wait for client 
+
+
+print(ip,port)
+clientSock.send("Hello from server")
+data = clientSock.recv()
+print(data)
+clientSock.close()
+
+
+
+
+##########################
+
+Client side
+
+Connect to server socket
+here we use telnet to do it
+
+Then send and receive data
+
+
+sudo apt-get install telnet
+
+telnet ip of server portno
+
+
+
+
+
+
+
+
+
+
+

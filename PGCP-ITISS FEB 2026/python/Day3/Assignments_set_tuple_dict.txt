@@ -1,0 +1,139 @@
+Set Assignments:
+
+1. Add a list of elements to a given set
+Given:
+sampleSet = {"Yellow", "Orange", "Black"}
+sampleList = ["Blue", "Green", "Red","Yellow","orange"]
+
+
+2. display common elements from the given set
+set1 = {10, 20, 30, 40, 50}
+set2 = {30, 40, 50, 60, 70}
+
+
+3. Generate a new set with all items from both sets by removing numbers which are in both sets.
+set1 = {10, 20, 30, 40, 50,25}
+set2 = {30, 40, 50, 60, 70,100}
+o/p : order is not important
+{70, 10, 20, 60,25,100}
+
+
+4. set of all elements in either A or B, but not both
+set1 = {10, 20, 30, 40, 50}
+set2 = {30, 40, 50, 60, 70}
+Expected output:
+{20, 70, 10, 60}
+
+
+5. Update set1 by adding items from set2, except common items
+set1 = {10, 20, 30, 40, 50}
+set2 = {30, 40, 50, 60, 70}
+Expected output:
+{70, 10, 20, 60}
+
+6. Take a sentence as input from user. Every word is separated by space. Print all unique words from the sentence.
+
+Tuple Assignments
+
+1. Reverse the following tuple
+aTuple = (10, 20, 30, 40, 50,60)
+Expected output:
+(60,50, 40, 30, 20, 10)
+
+2. display value 20 from the following tuple
+aTuple = ("Orange", [10, 20, 30], (5, 15, 25))
+3. Unpack the following tuple into 4 variables
+aTuple = (10, 20, 30, 40)
+
+4. Swap the following two tuples
+tuple1 = (11, 22)
+tuple2 = (99, 88)
+Expected output:
+tuple1 = (99, 88)
+tuple2 = (11, 22)
+
+5. Copy element 44 and 55 from the following tuple into a new tuple
+tuple1 = (11, 22, 33, 44, 55, 66)
+Expected output:
+tuple2: (44, 55)
+
+6. Modify the first item (22) of a list inside a following tuple to 200
+tuple1 = (11, [22, 33], 44, 55)
+Expected output:
+tuple1: (11, [200, 33], 44, 55)
+
+7. Take two integer values in a & b. Swap their values using tuple, using temparary variable and without tuple and without temparary variable.
+Ex. a=10 b=23
+After swapping a=23 b=10
+
+
+Dictionary Assignments
+
+
+1. In cryptography, a Caesar cipher is a very simple encryption techniques in which each letter in the plain text is replaced by a letter some fixed number of positions down the alphabet. For example, with a shift of 3, A would be replaced by D, B would become E, and so on. The method is named after Julius Caesar, who used it to communicate with his generals. ROT-13 ("rotate by 13 places") is a widely used
+example of a Caesar cipher where the shift is 13. In Python, the key for ROT-13 may be represented by means of the following dictionary
+{'a':'n', 'b':'o', 'c':'p', 'd':'q', 'e':'r', 'f':'s', 'g':'t', 'h':'u', 'i':'v', 'j':'w', 'k':'x', 'l':'y', 'm':'z', 'n':'a', 'o':'b', 'p':'c',
+'q':'d', 'r':'e', 's':'f', 't':'g', 'u':'h', 'v':'i', 'w':'j', 'x':'k', 'y':'l', 'z':'m', 'A':'N', 'B':'O', 'C':'P', 'D':'Q', 'E':'R', 'F':'S', 'G':'T', 'H':'U', 'I':'V', 'J':'W', 'K':'X', 'L':'Y', 'M':'Z', 'N':'A', 'O':'B', 'P':'C', 'Q':'D', 'R':'E', 'S':'F', 'T':'G', 'U':'H', 'V':'I', 'W':'J', 'X':'K', 'Y':'L', 'Z':'M'}
+Your task in this exercise is to implement an encoder/decoder of ROT-13. Once you're done, you will be able to read the following secret message:
+Pnrfne pvcure? V zhpu cersre Pnrfne fnynq!
+Note that since English has 26 characters, your ROT-13 program will be able to both encode and decode texts written in English.
+
+
+2. Given a dictionary of students and their favourite colours:
+people={'Arham':'Blue','Lisa':'Yellow',''Vinod:'Purple','Jenny':'Pink'}
+a. Find out how many students are in the list
+b. Change Lisa’s favourite colour
+c. Remove 'Jenny' and her favourite colour
+
+
+4. Sort and print students and their favourite colours alphabetically by name
+3. Write a menu driven program to practice Dictionary functions.
+Write a program to accept name of a person and their vehicle and store it in a dictionary.
+Ask user if they want to continue to accept multiple values.
+Display following menu:
+a. Add new person name and a vehicle name.
+b. Delete a person name and vehicle name from the dictionary.
+----Accept person name from user.
+----Check whether person name exists in the dictionary.
+----If exists show person name and vehicle name to the user.
+----Confirm for deletion, if user enters y
+then delete otherwise no. Display appropriate message.
+c. Modify vehicle name for the person
+----Accept a person name from user.
+----Check whether the person’s name exists.
+----If the name exists, show the person’s name and vehicle name to user.
+Ask for new value and then overwrite the old value.
+d. Search vehicle for the given person’s name.
+e. Search list of people, who have given a vehicle
+f. Display all person names.
+g. Display all vehicle names.
+h. Exit
+
+
+4. Write a program to display following menu and do the following:
+a. Add new city and trees commonly found in the city.
+b. Display all cities and the list of trees for all cities.
+c. Display list of trees of a particular city.
+---- Accept a city from user search city and if found display list of trees otherwise
+---- Display message not found
+d. Display cities which have the given tree.
+---- Accept a tree name from user and display all cities in which the tree is found.
+e. Delete city ---- Accept city from user and delete the city if found.
+---- Prompt user before deletion
+f. Modify tree list
+---- Accept city and trees to be added in the city. if city exist add trees at the end of the list
+---- Otherwise add city and list
+g. Exit
+
+
+5. Take a sentence as input from user. Every word is seperated by space. 
+a. Create a word_count dictionary which will have unique words and their count. 
+
+b. create suffix_count dictionary which will contain count of words ending with 's', 'es', 'ed', 'y', 'en' , etc.
+
+c. create dictionary word_length_count which will store length of word and count.
+Ex. 
+input_sent= 'CDAC is in Pune'
+There are 2 words of length 4 and 2 words of length 2 so,
+word_length_count = {2:2, 4:2}
+

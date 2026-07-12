@@ -1,0 +1,35 @@
+Create Employee class to have employee details
+    empid int
+    name str
+    designation str
+    salary int  --> make it private (hidden)
+    project_ids_assigned (set)
+    skills list of str
+    company name : 
+         class variable 
+
+Functionalities (methods):
+        display_projetids()
+        display_identity()
+        check_relevant_skill()
+
+
+
+Create three employees with different details 
+Give them skills
+
+
+Print project ids of all of them (one by one)
+using instance method
+
+Print company details
+
+
+
+
+
+
+
+
+
+

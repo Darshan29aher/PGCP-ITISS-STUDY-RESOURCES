@@ -1,0 +1,268 @@
+
+
+Basic Logic building programs
+
+Simple Calculator Program
+Scientific Calculator program
+
+WAP to print the odd numbers from 1 to 99. Prints one number per line.
+
+WAP  to accept a number and check the number is even or not. Prints 1 if the number is even or 0 if the number is odd.
+
+WAP to print numbers between 1 to 100 which are divisible by 3, 5 and by both
+( total 3 list of numbers to be printed)
+
+WAP that accepts three integers from the user and return true if two or more of them have the same rightmost digit. The integers are non-negative
+
+WAP to convert input number of seconds to HH:MM:SS.
+
+WAP to print all leap years between 2000 to 2100. Apply all conditions of checking leap year ( (divisible by 4 and not divisible by 100) OR (divisible by 400))
+
+Write a  program that takes three numbers as input to calculate and print the average of the numbers.
+
+Write a  program that takes three numbers as input then print maximum and minimum number of the three
+
+Write a  program and compute the sum of the digits of an integer.
+
+Write a  program to swap two variables
+a. by using a temporary variable
+b. using arithmatic operation and not using a variable
+c. without using variable ( using python unpacking syntax)
+
+
+WAP to print day of input date when given day for 1st day of that month
+    ex. input date : 16/07/2022  day of 1st day of that month : Friday
+    output : saturday
+
+
+Factorial Program using Recursion
+    n! = n * (n-1) * (n-2) * ... *2*1
+
+Factorial of a number using loop
+    n! = n * (n-1) * (n-2) * ... *2*1
+
+Fibonacci Series.
+    1,1,2,3,5,8,13,21,34,...
+
+Armstrong Number.
+    It is a number with 'n' digits. Here (sum of every digit ^ n) equal to ( number itself)
+
+    1) 1^3+5^3+3^3=153 ( here number of digits(n) is 3)
+    2) 1^1 = 1 ( here number of digits is 1)
+    3) 1634 = 1^4 + 6^4 + 3^4 + 4^4 ( here number of digits is 4)
+
+
+Perfect sqaure WAP to check if a number is perfect square or not.
+
+Prime number.
+    Number is not divisible by any number other than 1 and itself
+
+Reverse a string.
+
+Reverse a number.
+
+Check Palindrome number
+
+Check Palindrome string.
+
+Find duplicate characters in a string.
+
+Given a string find all possible Permutation and Combination of its characters (Hint : use itertools)
+
+Given an integer find all possible Permutation and Combination of its digits (Hint : use itertools)
+
+Given a string find all possible words which can be made such that word ends with a vowel (Hint : use itertools)
+
+Given an integer find all possible integers generated using its digits such that first digit is odd (Hint : use itertools)
+
+Take a number from user. Print highest number possible using all digits once from given number 
+input :1234
+output:4321
+input: 96825
+output: 98652
+
+Pattern Programs --> X pattern, diamond pattern, inverse diamond pattern, pyramid of digits pattern, etc
+
+print table of any given number 
+Ex table of 2 is 
+    2,4,6,8,10,12,14,16,18,20
+
+Write a  program to print the area and perimeter of a circle
+
+WAP to calculate distance between two points
+
+Write a  program to add and multiply two binary numbers
+
+WAP to convert decimal no to binary without using builtin methods
+
+
+WAP  to count the letters, spaces, numbers and other characters of an input string. 
+
+WAP  to print the ascii value of a given character
+
+WAP that accepts an integer (n) and computes the value of n + n*n + n*n*n.
+
+WAP to find the size of a specified file.
+
+WAP to display the system time.
+
+WAP to display the current date time in specific format.
+
+WAP to accepts an integer and count the factors of the number. 
+
+WAP to capitalize the first letter of each word in input sentence.
+a. using builtin function
+b. without builtin function
+
+WAP to find the penultimate (last but one) word of a sentence.
+
+WAP to check if input is 4 digit number and less than 3000
+
+WAP to find second last maximum value from list of numbers
+
+WAP to find second last minimum value from list of numbers
+
+WAP to find number in a list which is repeated exactly 'n' times
+
+WAP to insert a word in the middle of the a phrase (words). 
+    EX. Insert "Tutorial" in the middle of "Python 3.9", so result will be Python Tutorial 3.9
+    Ex2. str1 = "Maharashtra"
+    str2 = "Pune India"
+    O/p = "Pune Maharashtra India"
+
+WAP to extract the first half of a given string
+
+WAP to create a string in the form short_string + long_string + short_string from two strings. Give error if strings same length.
+
+
+WAP  to create the concatenation of the two strings except removing the first character of each string. The length of the strings must be 1 and above
+
+
+WAP to create a new string taking first three characters from a given string. If the length of the given string is less than 3 use "#" as substitute characters
+Ex. str1="India"  --> o/p "Ind"
+Ex2 str1 = "a" --> o/p "a##"
+
+
+WAP to take file name with any extension as input. Print name and extension of the file name seperately.
+    ex. my_photo.png    --> name : my_photo ext: png
+        myfile.docx     --> name: myfile  ext: docx
+        1.gz            --> name: 1  ext:gz
+
+WAP to check if a string starts with a specified word. 
+Sample Data: string1 = "Hello how are you?"
+word = "Hello"
+Sample Output: True
+
+WAP to sort list of strings based on alphabetical order of second character of each string. Assume all strings are minimum 2 character long
+
+WAP to find all strings in an list of strings which end with "g" or start with "p"
+
+WAP  start with an input integer n, divide n by 2 if n is even or multiply by 3 and add 1 if n is odd, repeat the process until n = 1.
+
+WAP to test if 10 appears as either the first or last element of an list of integers. The length of the list must be greater than or equal to 2.
+
+WAP to test if the first or the last element of two list of integers are same. The length of the list must be greater than or equal to 2.
+
+WAP to merge two lists into a single list. First element from first list then first from second list like wise. 
+
+WAP to do right shift on given integer.
+    Ex. val = 1234 after right shift
+        right_shifted_val = 4123
+
+WAP to do left shift on given integer.
+    Ex. val = 1234 after right shift
+        left_shifted_val = 2341
+
+
+WAP to read an integer and calculate the sum of its digits and write the number of each digit of the sum in English.
+    Ex. 1234 --> output "One Zero"
+        999999999999 --> output "One Zero Eight"
+
+
+WAP given a list of numbers create two lists one which contains all numbers divisible by 5 and another list for remaining numbers
+
+WAP to count the number of even and odd elements in a given list of integers.
+
+WAP to check if an list of integers contains two consecutive occurances of 10 or 20 but not both
+    ex. [10,30,50,10,10 ]  --> True
+        [20,20,89,67] --> True
+        [10,10,20,20] --> False
+        [23,10,34,10,56] --> False
+        [23,20,34,20,56] --> False
+
+
+
+WAP to find unique numbers in an list and count their occurance.
+
+WAP to find unique words in a sentence and count their occurance.
+
+WAP to find unique characters in a sentence and count their occurance.
+
+WAP to check if an list of integers contains three increasing adjacent numbers
+    ex. [1,3,5,2,5] --> True
+        [1,1,4,2,67,5] --> False
+        [1,9,2,67,100,124,34] --> True
+
+
+WAP for doing bubble sort of given numbers
+
+WAP to print calender for a month. Take how many days are there in month and starting day of the month as input
+    Ex. input no of days : 30  starting day of month : Thursday
+    Ouput :: Day wise Calender  ( just like June 2022 month)
+
+
+########################################################
+Advanced  Programs
+########################################################
+
+WAP to print first 100 prime numbers
+
+WAP to find the number of values in a given range divisible by a given value.
+
+Take a date as input from user, find number of days from 1st january 2000
+
+ DataBase Connectivity Program
+
+Transpose of a Matrix Program
+
+Binary Search Program in python
+
+insertion sort
+
+HeapSort Program in python
+
+Removing Elements from List one by one
+
+
+
+LinkedList Program in Python
+
+Circular LinkedList Program in  python 
+
+implement stack in python
+
+implement queue
+
+implement heapsort
+
+WAP to check paranthesis right and left in input string, and tell the location where the paranthesis is missing
+
+WAP to create and display all possible unique three-digit numbers using 1, 2, 3, 4. Also count how many three-digit numbers are there
+
+WAP to calculate without using library function number of days between two dates
+(Hint : think about leap years between those dates)
+
+WAP to rearrange all the elements of a given list of integers so that all the odd numbers come before all the even numbers.
+
+
+WAP  to measure how long some code takes to execute in seconds.
+
+WAP given a list of numbers create two lists one which contains all numbers divisible by 5 and another list for remainder values from devision with 5 for numbers which are not completely divisible by 5
+
+WAP to sort list of strings based on alphabetical order of second character of each string. Add "#" in begining of all strings which contain only one char and add two "@" for empty strings. Then sort the list.
+
+
+
+######################################
+
+Check  version

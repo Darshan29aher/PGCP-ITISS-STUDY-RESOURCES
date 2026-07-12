@@ -1,0 +1,104 @@
+1. Given a string of odd length greater than 7, return a new string made of the middle three characters
+of a given String
+Given:
+str1 = "RakeshzipPetabb"
+Output
+zip
+str2 = "JazzbonAyxx"
+Output
+bon
+
+2. Given two strings, s1 and s2, create a new string by appending s2 in the middle of s1
+Given:
+s1 = "Ault"
+s2 = "Kelly"
+Expected Output:
+AuKellylt
+
+
+3. two strings, s1, and s2 return a new string made of the first, middle, and last characters each input
+string
+Given:
+s1 = "America"
+s2 = "Japan"
+Expected Output:
+AJrpan
+
+
+4. Given an input string with the combination of the lower and upper case arrange characters in such a
+way that all lowercase letters should come first.
+
+
+5. create a third-string made of the first char of s1 then the last char of s2, Next, the second char of s1
+and second last char of s2, and so on. Any leftover chars go at the end of the result.
+Given:
+s1 = "Abc"
+s2 = "Xyz"
+Expected Output:
+AzbycX
+
+
+6. Find all occurrences of “USA” from right to left in a given string ignoring the case. also display the
+starting position
+Given:
+str1 = "Welcome to USA. usa awesome, isn't it?
+Expected answer : 16, 11
+
+
+7. Find all overlapping occurrences of given substring in given string
+Ex.
+String = 0111
+Substring = 11
+Expected answer : 2
+String : ANANAAAANNN
+Substring: ANA
+Expected answer : 2
+String : ANANAAAANNN
+Substring: AA
+Expected answer : 3
+
+
+8. Given a string in format Emp_name:Emp_id
+If emp_is is perfect square -- > Print only vowels from emp_name
+Else if emp_id is prime -- > print alternate characters from emp_name
+Else if emp_id is odd -- > print sum of ascii values of characters in emp_name
+Else print None
+
+
+9. Find all mobile number mentioned in given paragraph of text
+Mobile number is always a 10 digit number no spaces no special characters
+Ex. Input= “this is a good number 9089786756 and 8900000000 is a desired number”
+Expected output: 9089786756 , 8900000000
+
+
+10. Count occurrence of spaces, and special characters in given string
+Ex.
+Input: Fgh^f #89
+Expected output :
+Spaces: 1
+Special characters: 2
+
+
+11. Given a paragraph count number of words, sentences. Every sentence ends with either . or ? or !
+Print Count of how many normal sentences ending with . , how many interrogative sentences ( ending
+with ?) and how many exclamatory sentences ( ending with !).
+Ex.
+Input : “I am at CDAC. What about you? I am surprised by current weather!”
+Normal sentence : 1
+Interrogative: 1
+Exclamatory : 1
+
+
+12. You are given a string S and width w.
+Your task is to wrap the string into a paragraph of width w
+Example .
+String : “ABCDEFGHIJKLIMNOQRSTUVWXYZ”
+Width: 4
+Output:
+ABCD
+EFGH
+IJKL
+IMNO
+QRST
+UVWX
+YZ

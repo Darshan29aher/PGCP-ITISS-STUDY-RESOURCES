@@ -1,0 +1,599 @@
+mysql> system cls
+mysql> use ditiss;
+Database changed
+mysql> show tables;
++------------------+
+| Tables_in_ditiss |
++------------------+
+| bonus            |
+| dept             |
+| dummy            |
+| emp              |
+| salgrade         |
++------------------+
+5 rows in set (0.00 sec)
+
+mysql> select * from emp;
++-------+--------+-----------+------+------------+---------+---------+--------+
+| EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
++-------+--------+-----------+------+------------+---------+---------+--------+
+|  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800.00 |    NULL |     20 |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |
+|  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850.00 |    NULL |     30 |
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450.00 |    NULL |     10 |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1982-12-09 | 3000.00 |    NULL |     20 |
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000.00 |    NULL |     10 |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500.00 |    0.00 |     30 |
+|  7876 | ADAMS  | CLERK     | 7788 | 1983-01-12 | 1100.00 |    NULL |     20 |
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000.00 |    NULL |     20 |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300.00 |    NULL |     10 |
++-------+--------+-----------+------+------------+---------+---------+--------+
+14 rows in set (0.00 sec)
+
+mysql> select * from emp order by ename;
++-------+--------+-----------+------+------------+---------+---------+--------+
+| EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
++-------+--------+-----------+------+------------+---------+---------+--------+
+|  7876 | ADAMS  | CLERK     | 7788 | 1983-01-12 | 1100.00 |    NULL |     20 |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850.00 |    NULL |     30 |
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450.00 |    NULL |     10 |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000.00 |    NULL |     20 |
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 |
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000.00 |    NULL |     10 |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300.00 |    NULL |     10 |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1982-12-09 | 3000.00 |    NULL |     20 |
+|  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800.00 |    NULL |     20 |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500.00 |    0.00 |     30 |
+|  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
++-------+--------+-----------+------+------------+---------+---------+--------+
+14 rows in set (0.01 sec)
+
+mysql> select * from emp order by ename asc;
++-------+--------+-----------+------+------------+---------+---------+--------+
+| EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
++-------+--------+-----------+------+------------+---------+---------+--------+
+|  7876 | ADAMS  | CLERK     | 7788 | 1983-01-12 | 1100.00 |    NULL |     20 |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850.00 |    NULL |     30 |
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450.00 |    NULL |     10 |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000.00 |    NULL |     20 |
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 |
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000.00 |    NULL |     10 |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300.00 |    NULL |     10 |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1982-12-09 | 3000.00 |    NULL |     20 |
+|  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800.00 |    NULL |     20 |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500.00 |    0.00 |     30 |
+|  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
++-------+--------+-----------+------+------------+---------+---------+--------+
+14 rows in set (0.00 sec)
+
+mysql> select * from emp order by ename desc;
++-------+--------+-----------+------+------------+---------+---------+--------+
+| EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
++-------+--------+-----------+------+------------+---------+---------+--------+
+|  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500.00 |    0.00 |     30 |
+|  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800.00 |    NULL |     20 |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1982-12-09 | 3000.00 |    NULL |     20 |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300.00 |    NULL |     10 |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000.00 |    NULL |     10 |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 |
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000.00 |    NULL |     20 |
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450.00 |    NULL |     10 |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850.00 |    NULL |     30 |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |
+|  7876 | ADAMS  | CLERK     | 7788 | 1983-01-12 | 1100.00 |    NULL |     20 |
++-------+--------+-----------+------+------------+---------+---------+--------+
+14 rows in set (0.00 sec)
+
+mysql> select * from emp order by deptno,ename;
++-------+--------+-----------+------+------------+---------+---------+--------+
+| EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
++-------+--------+-----------+------+------------+---------+---------+--------+
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450.00 |    NULL |     10 |
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000.00 |    NULL |     10 |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300.00 |    NULL |     10 |
+|  7876 | ADAMS  | CLERK     | 7788 | 1983-01-12 | 1100.00 |    NULL |     20 |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000.00 |    NULL |     20 |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1982-12-09 | 3000.00 |    NULL |     20 |
+|  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800.00 |    NULL |     20 |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850.00 |    NULL |     30 |
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500.00 |    0.00 |     30 |
+|  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
++-------+--------+-----------+------+------------+---------+---------+--------+
+14 rows in set (0.00 sec)
+
+mysql> select * from emp order by deptno,ename desc;
++-------+--------+-----------+------+------------+---------+---------+--------+
+| EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
++-------+--------+-----------+------+------------+---------+---------+--------+
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300.00 |    NULL |     10 |
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000.00 |    NULL |     10 |
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450.00 |    NULL |     10 |
+|  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800.00 |    NULL |     20 |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1982-12-09 | 3000.00 |    NULL |     20 |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000.00 |    NULL |     20 |
+|  7876 | ADAMS  | CLERK     | 7788 | 1983-01-12 | 1100.00 |    NULL |     20 |
+|  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500.00 |    0.00 |     30 |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850.00 |    NULL |     30 |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |
++-------+--------+-----------+------+------------+---------+---------+--------+
+14 rows in set (0.00 sec)
+
+mysql> select * from emp order by deptno,ename desc,sal desc;
++-------+--------+-----------+------+------------+---------+---------+--------+
+| EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
++-------+--------+-----------+------+------------+---------+---------+--------+
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300.00 |    NULL |     10 |
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000.00 |    NULL |     10 |
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450.00 |    NULL |     10 |
+|  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800.00 |    NULL |     20 |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1982-12-09 | 3000.00 |    NULL |     20 |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000.00 |    NULL |     20 |
+|  7876 | ADAMS  | CLERK     | 7788 | 1983-01-12 | 1100.00 |    NULL |     20 |
+|  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500.00 |    0.00 |     30 |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850.00 |    NULL |     30 |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |
++-------+--------+-----------+------+------------+---------+---------+--------+
+14 rows in set (0.00 sec)
+
+mysql> select * from emp order by deptno desc,job;
++-------+--------+-----------+------+------------+---------+---------+--------+
+| EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
++-------+--------+-----------+------+------------+---------+---------+--------+
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850.00 |    NULL |     30 |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |
+|  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500.00 |    0.00 |     30 |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1982-12-09 | 3000.00 |    NULL |     20 |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000.00 |    NULL |     20 |
+|  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800.00 |    NULL |     20 |
+|  7876 | ADAMS  | CLERK     | 7788 | 1983-01-12 | 1100.00 |    NULL |     20 |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300.00 |    NULL |     10 |
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450.00 |    NULL |     10 |
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000.00 |    NULL |     10 |
++-------+--------+-----------+------+------------+---------+---------+--------+
+14 rows in set (0.00 sec)
+
+mysql> select * from emp order by deptno desc,job,sal desc;
++-------+--------+-----------+------+------------+---------+---------+--------+
+| EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
++-------+--------+-----------+------+------------+---------+---------+--------+
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850.00 |    NULL |     30 |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500.00 |    0.00 |     30 |
+|  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1982-12-09 | 3000.00 |    NULL |     20 |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000.00 |    NULL |     20 |
+|  7876 | ADAMS  | CLERK     | 7788 | 1983-01-12 | 1100.00 |    NULL |     20 |
+|  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800.00 |    NULL |     20 |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300.00 |    NULL |     10 |
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450.00 |    NULL |     10 |
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000.00 |    NULL |     10 |
++-------+--------+-----------+------+------------+---------+---------+--------+
+14 rows in set (0.00 sec)
+
+mysql> select * from emp order by deptno;
++-------+--------+-----------+------+------------+---------+---------+--------+
+| EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
++-------+--------+-----------+------+------------+---------+---------+--------+
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450.00 |    NULL |     10 |
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000.00 |    NULL |     10 |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300.00 |    NULL |     10 |
+|  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800.00 |    NULL |     20 |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1982-12-09 | 3000.00 |    NULL |     20 |
+|  7876 | ADAMS  | CLERK     | 7788 | 1983-01-12 | 1100.00 |    NULL |     20 |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000.00 |    NULL |     20 |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |
+|  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850.00 |    NULL |     30 |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500.00 |    0.00 |     30 |
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |
++-------+--------+-----------+------+------------+---------+---------+--------+
+14 rows in set (0.00 sec)
+
+mysql> select * from emp order by deptno,mgr;
++-------+--------+-----------+------+------------+---------+---------+--------+
+| EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
++-------+--------+-----------+------+------------+---------+---------+--------+
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000.00 |    NULL |     10 |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300.00 |    NULL |     10 |
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450.00 |    NULL |     10 |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1982-12-09 | 3000.00 |    NULL |     20 |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000.00 |    NULL |     20 |
+|  7876 | ADAMS  | CLERK     | 7788 | 1983-01-12 | 1100.00 |    NULL |     20 |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 |
+|  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800.00 |    NULL |     20 |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |
+|  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500.00 |    0.00 |     30 |
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850.00 |    NULL |     30 |
++-------+--------+-----------+------+------------+---------+---------+--------+
+14 rows in set (0.00 sec)
+
+mysql> select * from emp order by deptno,mgr,job;
++-------+--------+-----------+------+------------+---------+---------+--------+
+| EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
++-------+--------+-----------+------+------------+---------+---------+--------+
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000.00 |    NULL |     10 |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300.00 |    NULL |     10 |
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450.00 |    NULL |     10 |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1982-12-09 | 3000.00 |    NULL |     20 |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000.00 |    NULL |     20 |
+|  7876 | ADAMS  | CLERK     | 7788 | 1983-01-12 | 1100.00 |    NULL |     20 |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 |
+|  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800.00 |    NULL |     20 |
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |
+|  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500.00 |    0.00 |     30 |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850.00 |    NULL |     30 |
++-------+--------+-----------+------+------------+---------+---------+--------+
+14 rows in set (0.00 sec)
+
+mysql> select * from emp order by deptno,mgr,job,ename;
++-------+--------+-----------+------+------------+---------+---------+--------+
+| EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
++-------+--------+-----------+------+------------+---------+---------+--------+
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000.00 |    NULL |     10 |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300.00 |    NULL |     10 |
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450.00 |    NULL |     10 |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000.00 |    NULL |     20 |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1982-12-09 | 3000.00 |    NULL |     20 |
+|  7876 | ADAMS  | CLERK     | 7788 | 1983-01-12 | 1100.00 |    NULL |     20 |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 |
+|  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800.00 |    NULL |     20 |
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500.00 |    0.00 |     30 |
+|  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850.00 |    NULL |     30 |
++-------+--------+-----------+------+------------+---------+---------+--------+
+14 rows in set (0.00 sec)
+
+mysql> select * from emp where sal>=0 order by deptno, sal desc,ename;
++-------+--------+-----------+------+------------+---------+---------+--------+
+| EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
++-------+--------+-----------+------+------------+---------+---------+--------+
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000.00 |    NULL |     10 |
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450.00 |    NULL |     10 |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300.00 |    NULL |     10 |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000.00 |    NULL |     20 |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1982-12-09 | 3000.00 |    NULL |     20 |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 |
+|  7876 | ADAMS  | CLERK     | 7788 | 1983-01-12 | 1100.00 |    NULL |     20 |
+|  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800.00 |    NULL |     20 |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850.00 |    NULL |     30 |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500.00 |    0.00 |     30 |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
+|  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |
++-------+--------+-----------+------+------------+---------+---------+--------+
+14 rows in set (0.00 sec)
+
+mysql> Create table student
+    -> (sid int primary key,
+    -> sname varchar(25) not null,
+    -> city varchar(20)
+    -> );
+Query OK, 0 rows affected (0.29 sec)
+
+mysql> insert into student values (1,'ANAND','Pune');
+Query OK, 1 row affected (0.05 sec)
+
+mysql> select * from student;
++-----+-------+------+
+| sid | sname | city |
++-----+-------+------+
+|   1 | ANAND | Pune |
++-----+-------+------+
+1 row in set (0.00 sec)
+
+mysql> insert into student values (1,'ANA','Pune');
+ERROR 1062 (23000): Duplicate entry '1' for key 'student.PRIMARY'
+mysql> insert into student values (5,'ANA','Pune');
+Query OK, 1 row affected (0.06 sec)
+
+mysql> select * from student;
++-----+-------+------+
+| sid | sname | city |
++-----+-------+------+
+|   1 | ANAND | Pune |
+|   5 | ANA   | Pune |
++-----+-------+------+
+2 rows in set (0.00 sec)
+
+mysql> insert into student (sname,city) values ('Vijay','Mumbai');
+ERROR 1364 (HY000): Field 'sid' doesn't have a default value
+mysql> 
+mysql> insert into student (sid,city) values (3,'Mumbai');
+ERROR 1364 (HY000): Field 'sname' doesn't have a default value
+mysql> 
+mysql> drop table student;
+Query OK, 0 rows affected (0.25 sec)
+
+mysql> show tables;
++------------------+
+| Tables_in_ditiss |
++------------------+
+| bonus            |
+| dept             |
+| dummy            |
+| emp              |
+| salgrade         |
++------------------+
+5 rows in set (0.00 sec)
+
+mysql> Create table student
+    -> (sid int primary key,
+    -> sname varchar(25) not null,
+    -> city varchar(20),
+    -> age  int check(age>21)
+    -> );
+Query OK, 0 rows affected (0.28 sec)
+
+mysql> insert into student values (1,'ANAND','Pune',25);
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into student values (2,'ANA','Pune',20);
+ERROR 3819 (HY000): Check constraint 'student_chk_1' is violated.
+mysql> 
+mysql> drop table student;
+Query OK, 0 rows affected (0.18 sec)
+
+mysql> Create table student
+    -> (sid int constraint std_pk primary key,
+    -> sname varchar(25) constraint std_notnll not null,
+    -> city varchar(20),
+    -> age  int constraint std_chk1 check(age>21)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'primary key,
+sname varchar(25) constraint std_notnll not null,
+city varchar(20),' at line 2
+mysql> Create table student
+    -> (sid int primary key,
+    -> sname varchar(25) constraint std_notnll not null,
+    -> city varchar(20),
+    -> age  int constraint std_chk1 check(age>21)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'not null,
+city varchar(20),
+age  int constraint std_chk1 check(age>21)
+)' at line 3
+mysql> Create table student
+    -> (sid int primary key,
+    -> sname varchar(25) constraint 'std_notnll' not null,
+    -> city varchar(20),
+    -> age  int constraint 'std_chk1' check(age>21)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''std_notnll' not null,
+city varchar(20),
+age  int constraint 'std_chk1' check(ag' at line 3
+mysql> 
+mysql> Create table student
+    -> (sid int primary key,
+    -> sname varchar(25)  not null,
+    -> city varchar(20),
+    -> age  int check(age>21),
+    -> pincode int default 0
+    -> );
+Query OK, 0 rows affected (0.40 sec)
+
+mysql> insert into student values (1,'ANAND','Pune',25,112233);
+Query OK, 1 row affected (0.08 sec)
+
+mysql> insert into student (sid,sname,city,age) values (1,'ANAND','Pune',25);
+ERROR 1062 (23000): Duplicate entry '1' for key 'student.PRIMARY'
+mysql> insert into student (sid,sname,city,age) values (2,'ANA','Pune',25);
+Query OK, 1 row affected (0.16 sec)
+
+mysql> select * from student;
++-----+-------+------+------+---------+
+| sid | sname | city | age  | pincode |
++-----+-------+------+------+---------+
+|   1 | ANAND | Pune |   25 |  112233 |
+|   2 | ANA   | Pune |   25 |       0 |
++-----+-------+------+------+---------+
+2 rows in set (0.00 sec)
+
+mysql> Create table student1
+    -> (sid int,
+    -> sname varchar(25) not null,
+    -> city varchar(20),
+    -> age  int ,
+    -> pincode int default 0,
+    -> CONSTRAINT PK_student1 PRIMARY KEY (sid),
+    -> CONSTRAINT chk_student1 CHECK (Age >= 18) 
+    -> );
+Query OK, 0 rows affected (0.29 sec)
+
+mysql> desc student1;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| sid     | int         | NO   | PRI | NULL    |       |
+| sname   | varchar(25) | NO   |     | NULL    |       |
+| city    | varchar(20) | YES  |     | NULL    |       |
+| age     | int         | YES  |     | NULL    |       |
+| pincode | int         | YES  |     | 0       |       |
++---------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> insert into student (sid,sname,city,age) values (1,'ANAND','Pune',15);
+ERROR 3819 (HY000): Check constraint 'student_chk_1' is violated.
+mysql> insert into student1 (sid,sname,city,age) values (1,'ANAND','Pune',15);
+ERROR 3819 (HY000): Check constraint 'chk_student1' is violated.
+mysql> system cls;
+mysql>  create table course
+    ->  (cid int,
+    ->   cname varchar(30) not null,
+    ->   duration int,
+    ->   primary key (cid)
+    ->   );
+Query OK, 0 rows affected (0.64 sec)
+
+mysql>  create table student3
+    ->   (
+    ->   sid int primary key,
+    ->   sname varchar(30) not null,
+    ->   courseid int,
+    ->   constraint st3_fk foreign key (courseid) references course(cid)
+    ->  );
+Query OK, 0 rows affected (0.47 sec)
+
+mysql> desc course;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| cid      | int         | NO   | PRI | NULL    |       |
+| cname    | varchar(30) | NO   |     | NULL    |       |
+| duration | int         | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> desc student3;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| sid      | int         | NO   | PRI | NULL    |       |
+| sname    | varchar(30) | NO   |     | NULL    |       |
+| courseid | int         | YES  | MUL | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> insert into course values (1,'DAC',6);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into course values (2,'DBDA',6);
+Query OK, 1 row affected (0.07 sec)
+
+mysql> insert into course values (3,'DITISS',6);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> select * from couse;
+ERROR 1146 (42S02): Table 'ditiss.couse' doesn't exist
+mysql> select * from course;
++-----+--------+----------+
+| cid | cname  | duration |
++-----+--------+----------+
+|   1 | DAC    |        6 |
+|   2 | DBDA   |        6 |
+|   3 | DITISS |        6 |
++-----+--------+----------+
+3 rows in set (0.00 sec)
+
+mysql> insert into student3 values (1,'ANAND',1);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into student3 values (2,'ANA',5);
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`ditiss`.`student3`, CONSTRAINT `st3_fk` FOREIGN KEY (`courseid`) REFERENCES `course` (`cid`))
+mysql> 
+mysql> 
+mysql> insert into student3 values (2,'ANA',3);
+Query OK, 1 row affected (0.09 sec)
+
+mysql> select * from student3;
++-----+-------+----------+
+| sid | sname | courseid |
++-----+-------+----------+
+|   1 | ANAND |        1 |
+|   2 | ANA   |        3 |
++-----+-------+----------+
+2 rows in set (0.00 sec)
+
+mysql> desc customer;
+ERROR 1146 (42S02): Table 'ditiss.customer' doesn't exist
+mysql> show tables;
++------------------+
+| Tables_in_ditiss |
++------------------+
+| bonus            |
+| course           |
+| dept             |
+| dummy            |
+| emp              |
+| salgrade         |
+| student          |
+| student1         |
+| student3         |
++------------------+
+9 rows in set (0.00 sec)
+
+mysql> create table customer
+    ->  (cno int,
+    ->   cname varchar(25) not null,
+    ->   address varchar(30),
+    ->   mobileno int,
+    ->   primary key (cno)
+    ->   );
+Query OK, 0 rows affected (0.34 sec)
+
+mysql> insert into customer values (1,'ANAND','Pune',112233);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into customer values (2,'VIJAY','MUMBAI',223355);
+Query OK, 1 row affected (0.12 sec)
+
+mysql> insert into customer values (3,'Sanjay','Goa',111222);
+Query OK, 1 row affected (0.23 sec)
+
+mysql>  create table orders
+    ->   (
+    ->   oid int primary key,
+    ->   odate date not null,
+    ->   cno int,
+    ->   constraint ord_fk foreign key (cno) references course(cno)
+    ->  );
+ERROR 3734 (HY000): Failed to add the foreign key constraint. Missing column 'cno' for constraint 'ord_fk' in the referenced table 'course'
+mysql>  create table orders
+    ->   (
+    ->   oid int primary key,
+    ->   odate date not null,
+    ->   cno int,
+    ->   constraint ord_fk foreign key (cno) references customer(cno)
+    ->  );
+Query OK, 0 rows affected (0.47 sec)
+
+mysql> insert into orders values (1,'2026-01-05',1);
+Query OK, 1 row affected (0.06 sec)
+
+mysql> insert into orders values (2,'2026-01-05',3);
+Query OK, 1 row affected (0.05 sec)
+
+mysql> exit

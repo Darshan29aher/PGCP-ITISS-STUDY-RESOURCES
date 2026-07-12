@@ -1,0 +1,41 @@
+
+SQL> create user ganesh identified by ganesh;
+
+User created.
+
+Warning: You are no longer connected to ORACLE.
+SQL> connect
+Enter user-name: ganesh
+Enter password:
+ERROR:
+ORA-01045: user GANESH lacks CREATE SESSION privilege; logon denied
+
+
+SQL> connect system
+Enter password:
+Connected.
+SQL> grant create session,resource to ganesh;
+
+Grant succeeded.
+
+SQL> connect ganesh
+Enter password:
+Connected.
+SQL>
+SQL>
+SQL> ed c:\dbt\demobld.sql
+
+SQL> @ c:\dbt\demobld.sql
+Building demonstration tables.  Please wait.
+Demonstration table build is complete.
+SQL> select * from tab;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+BONUS                          TABLE
+DEPT                           TABLE
+DUMMY                          TABLE
+EMP                            TABLE
+SALGRADE                       TABLE
+
+SQL>

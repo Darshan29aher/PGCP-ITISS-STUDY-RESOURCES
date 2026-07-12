@@ -1,0 +1,20 @@
+Parameters of Sorted function :::
+
+iterable :: list, string,tuple, set, dict
+    IT IS COMPULSORY Parameter
+
+key :: optional parameter
+it is function which returns key, 
+based on the key items are sorted
+
+ reverse: optional parameter
+ True:: returns descending order
+ False :: returns ascending order
+ default value of reverse is False
+
+Return value of sorted :::
+It returns a new list containing all items 
+from the iterable
+
+Examples of Sorted::
+Read sorted_practice.py 

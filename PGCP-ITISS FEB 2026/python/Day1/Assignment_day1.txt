@@ -1,0 +1,45 @@
+Basic Questions :
+
+Q1. What are components of a computer ?
+Q2. Which CPU are you using in you laptop / mobile / PC ?
+Q3. What is size of RAM in your PC ?
+Q4. Read Python documentation from
+https://docs.python.org/3/tutorial/index.html
+Q5. What are different implementations of Python ? Which implementation we are using ?
+Q6. Who created python ? in which year ? where ?
+ 
+Q7. What is PVM ?
+Q8. Python is platform independent or not ? Which platforms python can run ?
+Q9. Why python is platform independent ? What makes it platform independent ?
+Q10. WAP to Print "Hello IACSD" and write comment describing author of the program and date created
+Q11. Find working of various functions (min 7) from math library of python which is provided as standard library. 
+https://docs.python.org/3/library/math.html
+You can also try it yourself.
+Ex. 
+import math
+print(math.factorial(4))
+print(math.sin(90))
+Q12. Open VSCode IDE and create a python program (.py file) to print Hello world!. Run the program and check the put on console.
+
+Q13.WAP using VSCode IDE.  Import math library and print the gcd, lcm of two numbers.
+Q14. WAP using VSCode IDE. Use math library. Print number of options you have, when you are given 5 different characters and you need to select 3 of them without repeatitions. (find permutations)
+Q15. WAP using VSCode IDE. Use math library. Print number of options you have to select 20 students out of 60 without repeatitions. ( Obviously here order doesn't matter, so find combinations) 
+Q16. WAP using VSCode IDE. Use math library. Try to find log of zero. Which error is given ? 
+Also try to find square root of any negative number. What error is give?
+Q17. WAP to create a variable v1 and store any number. Find the square root of that number by using v1 in math.sqrt() function.
+Q18. Why python is considered as slow compared to C, C++ ?
+Refer : https://stackoverflow.com/questions/3033329/why-are-python-programs-often-slower-than-the-equivalent-program-written-in-c-or
+Q19. Check where .pyc files are stored after you run the program for Q15. 
+
+
+Advanced Assignments
+Q. What are different extensions supported by python?
+What is meaning of .py , .pyc, .pyz, .pyo, .pyd , etc extensions supported by python ?
+
+Q. Check what happens if we print math.sqrt without any parnthesis ? What happens if we print math.sqrt() without passing any number to it?
+Q. Can we convert .pyc file to python code? how?
+Q. What is Global Interpreter Lock (GIL)?
+Q. Which language is used to write python interpreter?
+Q. What is advantage of garbage collector over manual memory management by the programmer ?
+Q. When variable is created what is on stack and what part is on heap ?
+Q. What is garbage collector ? How reference counting works ?

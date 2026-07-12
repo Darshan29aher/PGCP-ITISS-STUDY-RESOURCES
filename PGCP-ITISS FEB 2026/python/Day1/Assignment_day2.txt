@@ -1,0 +1,305 @@
+If-Else Questions :
+
+1.	A student will not be allowed to sit in exam if his/her attendence is less than 75%.  
+Take following input from user Number of classes held Number of classes attended. And print percentage of class attended  
+Is student is allowed to sit in exam or not.  
+
+2. Modify the above question Q1. if student has ttendance less than 75% then ask user if he/she has medical cause or not ( 'Y' or 'N' ).  print "Allow" if he/she has medical cause else not allowed. 
+
+3. Take a number from user. Print whether it is even number or odd number.
+
+4.	A school has following rules for grading system:  
+a.	Below 25 - F  
+b.	25 to 45 - E  
+c.	45 to 50 - D  
+d.	50 to 60 - C  
+e.	60 to 80 - B  
+f.	Above 80 - A  
+Ask user to enter marks and print the corresponding grade.  
+  
+5.  What is output of following codes ?
+a.	
+x=2
+if(x == 2):
+  print("hello")
+else:
+  print("bye")
+b.	
+x=2
+if(x != 5):
+  print("hello")
+else:
+  print("bye")
+ 
+c.
+x=2
+y=0
+if (x != 5) & (y >= 5):
+  print("hello")
+else:
+  print("bye")
+d.
+x=2
+y=0
+if x != 5 & y >= 5:
+  print("hello")
+else:
+  print("bye")
+
+e.	
+z=0
+x=2
+if(z != 0) | (x == 2)  
+  print("hello")
+else:
+  print("bye")
+
+f.
+y=0
+if(not(y < 10)):
+  print("hello")
+else:
+  print("bye")
+
+g.
+x=2
+y=2
+z=x
+if(x==y==z):
+  print("hello")
+else:
+  print("bye")
+
+h.
+x=5
+y=7
+z=9
+if(x<y<z):
+  print("hello")
+else:
+  print("bye")
+
+i.
+x=5
+y=7
+z=9
+if(x<y>z):
+  print("hello")
+else:
+  print("bye")
+
+6. Accept number from user and check whether it is divisible by 5 and 11 if divisible then display appropriate message.  
+
+7. Write a program to take a number from user. Check whether the last digit of that is divisible by 3 or not.  
+[hint: last digit of num is num%10]
+  
+8.	Write a program to check whether an years is leap year or not the year is leap if it satisfies following condition  
+•	It the year is divisible by 100 o If it is divisible by 100, then it should also be divisible by 400 then it is leap year  
+•	otherwise, all other years divisible by 4 and not divisible by 100 then it is leap year.  
+
+9.	Write a program to calculate the electricity bill (accept number of unit from user) according to the following criteria :  
+             Unit                                    Price    
+First 100 units                                       no charge  
+Next 100 units                                        Rs 5 per unit  
+After 200 units                                       Rs 10 per unit  
+(For example if input unit is 350 than total bill amount is Rs2000)  
+
+
+10. Write a program to accept the price of a bike and display the road tax and insurance to be paid according to the following criteria . also display total amount to be paid.  
+      
+        Cost price (in Rs)           Tax                Inssurance  
+        > 100000                     15 %                   20%  
+        > 50000 and <= 100000        10%                    8%  
+        <= 50000                     5%                     5%   
+
+11. accept amount from user and find the minimum number notes required to get the amount amount =512  
+Notes: 2000,500,100,50,10,5,2,1  
+
+500-1 note  
+10  - 1 note  
+2-  1 coin  
+
+amount=20550  
+2000 – 10 note  
+500 – 1 note  
+50 -1 note  
+
+
+
+
+Loop Questions:
+
+1.	Accept 10 integers from user  and print their average value on the screen 
+
+2.	Take a number from user and check if it is prime or not
+ 
+3.	Write a program to find greatest common divisor (GCD) or highest common factor (HCF) of given two numbers. 
+[Hint: In mathematics, the Greatest Common Divisor (GCD) of two or more integers is the largest positive integer that divides each of the integers
+ without a remainder. It's also sometimes referred to as the Highest Common Factor (HCF).]
+
+4.	Take integer inputs from user until he/she presses q ( Ask to press q to quit after every integer input ). Print average and product of all numbers. 
+[ Hint use while loop ]
+
+5.	Given a number, count the total number of digits in a number 
+
+6.	To display the cube of the number upto given an integer. So, If the given integer is 5, then display cube of 1 to 4. # range(1,5)
+
+7.	Accept 20 numbers from user and display sum of only even numbers. 
+
+8.	Ask user number of terms to be generated of a series. 
+generate numbers for the following series and find its addition 
+[9 + 99 + 999 + 9999+……..] 
+
+9.	Write a program in python to display the sum of the series [ 1+x+x^2/2!+x^3/3!+....].  
+Test Data : 
+Input the value of x :3 Input number of terms : 5 Expected Output : 
+The sum is : 16.375000 
+
+10.	Write a program in python to find the sum of the series [ x - x^3 + x^5 –x^7+x^9-x^11+ ......].  
+Test Data : 
+Input the value of x :2 Input number of terms : 5 Expected Output : 
+The values of the series: 
+2 
+-8 
+32 
+-128 
+512 
+The sum = 410 
+
+11.	Take a number from user and find sum of digits of the number. 
+
+12.	Take a number from user and print sum of all odd numbers till that number.
+Ex. Enter a no : 10   
+Sum of all odd numbers till 10 : 3+5+7+9  =24
+
+Pattern printing :::
+
+Print the following patterns using loop : 
+a. 
+* 
+** 
+***
+****
+
+b. 
+    *                    
+  ***                
+***** 
+  ***
+    * 
+c. 
+1010101          
+ 10101  
+  101   
+   1    
+
+d.
+1  
+1 2  
+1 2 3  
+1 2 3 4  
+1 2 3 4 5 
+
+
+Basic Assignment
+
+Q1. What will be output of printing following calculations
+a. 1.5e200 *2.0e210
+b. 3.4e-320 / 1e100
+Explain the output
+
+
+
+Q2. 
+Read fstring_format_notes.txt file and then solve question 2, 3 and 4
+
+What is output of printing following
+a. 1/3
+b. format(1/3, '.3f')
+c. format(1/3, '.1f')
+d. 6*1/3
+e. 1/3 + 1/3 + 1/3 + 1/3 + 1/3 + 1/3
+
+
+Q3. In above question what is difference between output of a and b ? also, d and e?
+[Hint: read PPT 2. beginning programming with python --> goto Extra section --> Extra Note About Floating point Arithmetic]
+
+Q4. Study how format function works to print floating point values and strings . Then solve following using format function
+a. print only first 5 decimal values of 22/7 (hint: see b of Q3)
+b. print Hello string with 5 spaces on right side, 'Hello     ' ( hint: use <)
+c. print Hello string with 5 spaces on left side, '     Hello' ( hint: use <) 
+d. print Hello string with 5 '#' on left side and 5 '#' on right side, '     Hello     ' ( hint: use ^ and # as fill value)
+e. print 10 spaces (hint: give 10 as argument)
+
+Q5. We can use ord() to print ASCII value of single character and chr() to convert given ASCII value to character. 
+a. find ASCII of characters'a' , 'A' , 'z' , 'Z' using ord() one by one
+b. find ASCII of characters '0', '9', ' ', "\n" , "\t" using ord() one by one
+c. Find characters for ASCII values 35, 67, 50, 99
+d. Where ASCII value begin for lower case characters where it ends? also find same for digits and upper case characters
+
+Q6. Find how special chracters work inside print function
+a. print("abc","\n","bcd")
+b. print("abc\nbcd")
+c. print(1,'\n',2)
+d. print("hello \n\n!!")
+e. print("This is '\t' means tab")
+f. How many spaces are printed using \t?
+g. print("This","is","different",sep='\t')
+h. print("This","is","different",sep='#')
+i. print("This","is","different",sep='\n') 
+j. print("This","is","different",end='\n')
+
+Q7. What is output of following statements and understand how operators work
+a. 10 / 2
+b. 10 // 2.0
+c. 101 / 3
+d. 101 // 3
+e. 101 % 3
+f. 2 ** 4
+g. 3 ** 2
+h. abs(-10) # give absolute value
+i. divmod(101,3) # divmod gives two values , interger division and remainder
+j. 8 << 1
+k. 8 << 2
+l. 32 >> 2
+m. 16 >> 1
+
+Q8. Write a program to take marks of 3 subjects from a student. Calculate total in variable name 'total'.
+(NOTE: Don't use sum as variable name, it is built in function in python)
+
+Q9. Manually calculate output of following expressions using precedence and associativity rules 
+and then verify output using python shell
+a. 2 + 3 * (4 -1)
+b. 2 + ((3 *4) - 8)
+c. (2 + 3) * 4
+d. -10 + 25 / (16 + 12)
+e. 2 ** 2 ** 2
+f. (3 ** 2) ** 3
+g. x = y = 3 + 5
+h. 8/2*(2+2)
+
+
+Q10. Check output of following 
+a. x = y = 10
+b. x1 = 20 = y1
+
+Q11. What is output of following
+a.
+x=10
+y=34.4
+print(x and y)
+print(x or y)
+
+
+Advanced questions
+Q. Create a variable storing integer value. Print the identity of that variable. Then change value of that variable and again print the identity.
+Observe both identities, what is your conclusion?
+Q. What is PEMDAS rule ? What is BODMAS ? Is there any difference in them ?
+Q. What is PEMDAS vs PEDMAS ? is there any difference?
+
+
+
+
+
+
+

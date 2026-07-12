@@ -1,0 +1,131 @@
+MAX  min avg sum Count
+
+difference count(*) , count(comm) 
+
+
+
+ select deptno,sum(sal)
+ from emp
+ where job='CLERK' or Job='ANALYST'
+ group by deptno;
+
+
+select deptno,sum(sal)
+from emp
+group by deptno;
+
+
+
+order by
+limit  
+
+update customer
+set phone=333
+where name='JAY';
+
+update customer
+set 
+  phone=111 ,
+  email='vijay@gmail.com'
+where name='VIJAY';
+
+
+select ename,job,sal,emp.deptno,dept.deptno,dname
+from emp,dept
+order by dept.detno;
+
+
+select ename,job,sal,emp.deptno,dept.deptno,dname
+from emp,dept
+where emp.deptno=dept.deptno;
+
+select ename,job,sal,e.deptno,d.deptno,dname
+from emp e,dept d
+where e.deptno=d.deptno;
+
+select Code,Name ,Continent ,Population from country;
+
+select ID , name,  CountryCode  from city;
+
+select ID , name,  CountryCode  from city
+where CountryCode=(
+select Code from country where Name='India');
+
+select ID , Code,
+from country,city
+where  Code= CountryCode;
+
+
+select dname,loc,ename,sal,job,e.deptno,d.deptno
+from emp e INNER JOIN dept d
+on e.deptno=d.deptno;
+
+
+select dname,loc,ename,sal,job,e.deptno,d.deptno
+from emp e right outer JOIN dept d
+on e.deptno=d.deptno
+union 
+(
+ select dname,loc,ename,sal,job,e.deptno,d.deptno
+ from emp e left outer JOIN dept d
+ on e.deptno=d.deptno);
+
+select dname,loc,ename,sal,job,e.deptno,d.deptno
+from emp e INNER JOIN dept d
+on e.deptno != d.deptno;
+
+self join
+========
+select w.empno,w.ename,w.mgr,m.empno,m.ename
+from emp m,emp w
+where w.mgr=m.empno;
+===================
+
+select ename,job,sal,dname,loc,GRADE
+from emp e, dept d ,salgrade s
+where e.deptno=d.deptno and sal>=LOSAL and sal<=HISAL;
+
+
+select ename,job,sal,dname,loc,GRADE
+from emp e, dept d ,salgrade s
+where e.deptno=d.deptno and sal between LOSAL and HISAL;
+
+
+select ename,job,sal,dname,loc
+from emp natural join dept;
+
+
+create table dept1
+as
+select deptno as dno,dname,loc
+from dept;
+
+
+select ename,job,sal,dname,loc
+from emp natural join dept1;
+
+create table dept2
+as 
+select * from emp
+where 1=2;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

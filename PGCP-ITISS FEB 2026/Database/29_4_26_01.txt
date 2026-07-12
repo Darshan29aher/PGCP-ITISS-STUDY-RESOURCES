@@ -1,0 +1,141 @@
+mysql> system cls
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> create database flipkart;
+Query OK, 1 row affected (0.12 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| flipkart           |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+7 rows in set (0.00 sec)
+
+mysql> use flipkart;
+Database changed
+mysql> 
+mysql> 
+mysql> 
+mysql>  Create table customer
+    -> (
+    -> name char(15),
+    -> city varchar(20),
+    -> phone int,
+    -> DOB  date,
+    -> pincode  int,
+    -> email  varchar(25)
+    -> );
+Query OK, 0 rows affected (1.53 sec)
+
+mysql> show tables;
++--------------------+
+| Tables_in_flipkart |
++--------------------+
+| customer           |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> 
+mysql> 
+mysql> 
+mysql> desc customer;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| name    | char(15)    | YES  |     | NULL    |       |
+| city    | varchar(20) | YES  |     | NULL    |       |
+| phone   | int         | YES  |     | NULL    |       |
+| DOB     | date        | YES  |     | NULL    |       |
+| pincode | int         | YES  |     | NULL    |       |
+| email   | varchar(25) | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+6 rows in set (0.01 sec)
+
+mysql> describe customer;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| name    | char(15)    | YES  |     | NULL    |       |
+| city    | varchar(20) | YES  |     | NULL    |       |
+| phone   | int         | YES  |     | NULL    |       |
+| DOB     | date        | YES  |     | NULL    |       |
+| pincode | int         | YES  |     | NULL    |       |
+| email   | varchar(25) | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> insert into customer values ('ANANAD','Pune',112233,'1997-05-01',41103,'anand@gmail.com');
+Query OK, 1 row affected (0.12 sec)
+
+mysql> select * from customer;
++--------+------+--------+------------+---------+-----------------+
+| name   | city | phone  | DOB        | pincode | email           |
++--------+------+--------+------------+---------+-----------------+
+| ANANAD | Pune | 112233 | 1997-05-01 |   41103 | anand@gmail.com |
++--------+------+--------+------------+---------+-----------------+
+1 row in set (0.00 sec)
+
+mysql> insert into customer values ('JAY','Mumbai',NULL,'1997-05-01',41103,NULL);
+Query OK, 1 row affected (0.32 sec)
+
+mysql> select * from customer;
++--------+--------+--------+------------+---------+-----------------+
+| name   | city   | phone  | DOB        | pincode | email           |
++--------+--------+--------+------------+---------+-----------------+
+| ANANAD | Pune   | 112233 | 1997-05-01 |   41103 | anand@gmail.com |
+| JAY    | Mumbai |   NULL | 1997-05-01 |   41103 | NULL            |
++--------+--------+--------+------------+---------+-----------------+
+2 rows in set (0.00 sec)
+
+mysql> insert into customer values ('ANANAD',112233,'Pune','1997-05-01',41103,'anand@gmail.com');
+ERROR 1366 (HY000): Incorrect integer value: 'Pune' for column 'phone' at row 1
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+mysql> insert into customer (name,city,dob) values ('VIJAY','PUNE','1975-05-07');
+Query OK, 1 row affected (0.07 sec)
+
+mysql> select * from customer;
++--------+--------+--------+------------+---------+-----------------+
+| name   | city   | phone  | DOB        | pincode | email           |
++--------+--------+--------+------------+---------+-----------------+
+| ANANAD | Pune   | 112233 | 1997-05-01 |   41103 | anand@gmail.com |
+| JAY    | Mumbai |   NULL | 1997-05-01 |   41103 | NULL            |
+| VIJAY  | PUNE   |   NULL | 1975-05-07 |    NULL | NULL            |
++--------+--------+--------+------------+---------+-----------------+
+3 rows in set (0.00 sec)
+
+mysql> insert into customer (email,name,phone) values ('sagar@gmail.com','sagar',112255);
+Query OK, 1 row affected (0.05 sec)
+
+mysql> select * from customer;
++--------+--------+--------+------------+---------+-----------------+
+| name   | city   | phone  | DOB        | pincode | email           |
++--------+--------+--------+------------+---------+-----------------+
+| ANANAD | Pune   | 112233 | 1997-05-01 |   41103 | anand@gmail.com |
+| JAY    | Mumbai |   NULL | 1997-05-01 |   41103 | NULL            |
+| VIJAY  | PUNE   |   NULL | 1975-05-07 |    NULL | NULL            |
+| sagar  | NULL   | 112255 | NULL       |    NULL | sagar@gmail.com |
++--------+--------+--------+------------+---------+-----------------+
+4 rows in set (0.00 sec)
+
+

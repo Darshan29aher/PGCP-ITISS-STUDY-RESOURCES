@@ -1,0 +1,151 @@
+the format() function (and f-strings) are essential tools for creating well-formatted and readable strings in Python.
+
+#################################################
+f-strings (Formatted String Literals):
+
+Python 3.6 introduced f-strings, which provide a more concise and readable way to format strings.
+
+
+name = "Charlie"
+age = 35
+print(f"My name is {name} and I am {age} years old.")
+
+f-strings can also use the same formatting specifiers as format().
+
+    Type Specifiers:
+        d: Integer
+        f: Floating-point number
+        s: String
+        b: Binary
+        x: Hexadecimal
+        o: Octal
+        e: scientific notation
+
+# Example with integer formatting
+print(f"The number is: {42:d}")
+
+# Example with floating-point formatting
+print(f"Pi is approximately: {3.14159:.2f}")
+
+# Example with string formatting
+print(f"The string is: {str(42):s}")
+
+# Example with binary, hexadecimal, and octal formatting
+print(f"Binary: {10:b}, Hex: {10:x}, Octal: {10:o}")
+
+#Example with scientific notation.
+print(f"scientific notation: {1234.5678:e}")
+
+#Example using percent formatting.
+print(f"percent format: {0.25:.2%}")
+
+Width and fill character usage in f string ::::
+width is given by colan (:) and then a number value
+For example, f"{value:10}" will ensure that the value occupies at least 10 characters.
+
+Alignment:
+
+    You can control the alignment of the value within the field using the following characters:
+        <: Left alignment
+        >: Right alignment
+        ^: Center alignment
+
+Fill Character:
+
+    You can specify a fill character to use for padding by placing it before the alignment character. For example, f"{value:*^10}" will center the value within a 10-character field and fill the remaining space with asterisks (*).
+
+print(f"{value:>10}")  # Right-aligned, width 10
+print(f"{value:<10}")  # Left-aligned, width 10
+print(f"{value:^10}")  # Centered, width 10
+print(f"{value:*^10}") # Centered, width 10, fill with *
+print(f"{number:05}") # adds leading zeros to numbers.
+
+#############################################################################
+
+
+format function ::
+
+In recent python versions f-string usage is more popular than format function
+
+The format() function in  is a powerful and flexible way to create formatted strings. It allows you to insert values into strings, control their formatting, and create complex output.
+
+Basic Usage:
+
+The format() method is called on a string, and it takes arguments that will be inserted into placeholders within the string. Placeholders are denoted by curly braces {}.
+
+Example :::::
+name = "Alice"
+age = 30
+formatted_string = "My name is {} and I am {} years old.".format(name, age)
+print(formatted_string)  # Output: My name is Alice and I am 30 years old.
+
+
+Positional Arguments:
+
+You can use positional arguments to specify the order in which values are inserted.
+
+
+formatted_string = "The numbers are {1} and {0}.".format(10, 20)
+print(formatted_string)  # Output: The numbers are 20 and 10.
+
+Keyword Arguments:
+
+You can also use keyword arguments to make your code more readable.
+
+
+formatted_string = "My name is {name} and I am {age} years old.".format(name="Bob", age=25)
+print(formatted_string)  # Output: My name is Bob and I am 25 years old.
+
+Formatting Specifiers:
+
+The real power of format() comes from its formatting specifiers, which allow you to control how values are displayed.
+
+    Type Specifiers:
+        d: Integer
+        f: Floating-point number
+        s: String
+        b: Binary
+        x: Hexadecimal
+        o: Octal
+        e: scientific notation
+
+    Width and Precision:
+        {:width}: Specifies the minimum width of the field.
+        {:.precisionf}: Specifies the precision (number of decimal places) for floating-point numbers.
+
+    Alignment:
+        {: <width}: Left-align the value.
+        {: >width}: Right-align the value.
+        {: ^width}: Center-align the value.
+
+    Fill Character:
+        {:fill>width}: Uses 'fill' as the fill character.
+
+Examples:
+
+
+# Formatting integers
+print("The number is {:d}".format(42))  # Output: The number is 42
+print("Binary: {:b}, Hex: {:x}, Octal: {:o}".format(10, 10, 10))
+
+# Formatting floats
+print("The float is {:.2f}".format(3.14159))  # Output: The float is 3.14
+print("Scientific notation: {:.2e}".format(1234.56))
+
+# Formatting strings
+print("The string is {:s}".format("hello"))
+
+# Width and alignment
+print("{:10}".format("test"))  # Output: test
+print("{:<10}".format("test")) # left align
+print("{:>10}".format("test")) # right align
+print("{:^10}".format("test")) # center align
+print("{:*^10}".format("test")) # center align with fill
+
+#using commas as thousands seperators.
+print("{:,}".format(1234567))
+
+#using percent formatting
+print("{:.2%}".format(0.25))
+
+

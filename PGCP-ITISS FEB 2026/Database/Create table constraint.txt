@@ -1,0 +1,72 @@
+Create table student
+(sid int primary key,
+sname varchar(25)  not null,
+city varchar(20),
+age  int check(age>21),
+pincode int default 0
+);
+
+
+
+Create table student1
+(sid int,
+sname varchar(25) not null,
+city varchar(20),
+age  int ,
+pincode int default 0,
+CONSTRAINT PK_student1 PRIMARY KEY (sid),
+CONSTRAINT chk_student1 CHECK (Age >= 18) 
+);
+
+
+ create table course
+ (cid int,
+  cname varchar(30) not null,
+  duration int,
+  primary key (cid)
+  );
+
+
+ create table student3
+  (
+  sid int primary key,
+  sname varchar(30) not null,
+  courseid int,
+  constraint st3_fk foreign key (courseid) references course(cid)
+ );
+
+
+CONSTRAINT fk_name FOREIGN KEY (current_column_fk)    REFERENCES table_name(reffered_pk);
+
+
+create table customer
+ (cno int,
+  cname varchar(25) not null,
+  address varchar(30),
+  mobileno int,
+  primary key (cno)
+  );
+insert into customer values (1,'ANAND','Pune',112233);
+insert into customer values (2,'VIJAY','MUMBAI',223355);
+insert into customer values (3,'Sanjay','Goa',111222);
+
+ create table orders
+  (
+  oid int primary key,
+  odate date not null,
+  cno int,
+  constraint ord_fk foreign key (cno) references customer(cno)
+ );
+
+insert into orders values (1,'2026-01-05',1);
+insert into orders values (2,'2026-01-05',3);
+
+
+ create table orders1
+  (
+  oid int primary key,
+  odate date not null,
+  cno int,
+foreign key (cno) references customer(cno)
+ );
+

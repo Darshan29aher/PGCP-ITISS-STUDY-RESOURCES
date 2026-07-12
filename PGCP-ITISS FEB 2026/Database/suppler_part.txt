@@ -1,0 +1,52 @@
+suppler
+sid (PK)   1          2 
+sname   ANAND      Ram
+city   
+
+part
+pid(PK)    1        2
+pname  mobile   TV
+desc  
+
+
+sup_part
+Sid (FK)
+Pid (FK)
+rate 
+discount
+duration
+
+
+PK(sid,pid)
+
+
+
+
+
+
+ALTER TABLE EMP
+ADD CONSTRAINT fk_EMP
+FOREIGN KEY (DEPTNO)
+REFERENCES DEPT(DEPTNO);
+
+
+SELECT TABLE_NAME, CONSTRAINT_TYPE, CONSTRAINT_NAME
+FROM information_schema.table_constraints
+WHERE table_name='EMP';
+
+
+CREATE TABLE supplier (
+    sid int AUTO_INCREMENT PRIMARY KEY,
+    sName varchar(255) NOT NULL,
+    city varchar(255)
+);
+
+
+mysql> create view view_emp
+    -> as
+    -> select empno,ename,job,deptno
+    -> from emp;
+
+
+CREATE INDEX emp_index1
+ON emp (ename);

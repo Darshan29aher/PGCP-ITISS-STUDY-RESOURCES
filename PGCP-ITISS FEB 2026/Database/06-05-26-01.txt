@@ -1,0 +1,567 @@
+mysql> set autocommit=0;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> system cls
+mysql> show tables;
++------------------+
+| Tables_in_ditiss |
++------------------+
+| bonus            |
+| course           |
+| customer         |
+| dept             |
+| dummy            |
+| emp              |
+| emp1             |
+| orders           |
+| orders1          |
+| salgrade         |
+| student          |
+| student1         |
+| student3         |
++------------------+
+13 rows in set (0.00 sec)
+
+mysql> desc student;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| sid     | int         | NO   | PRI | NULL    |       |
+| sname   | varchar(25) | NO   |     | NULL    |       |
+| city    | varchar(20) | YES  |     | NULL    |       |
+| age     | int         | YES  |     | NULL    |       |
+| pincode | int         | YES  |     | 0       |       |
++---------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> select * from student;
++-----+-------+------+------+---------+
+| sid | sname | city | age  | pincode |
++-----+-------+------+------+---------+
+|   1 | ANAND | Pune |   25 |  112233 |
+|   2 | ANA   | Pune |   25 |       0 |
++-----+-------+------+------+---------+
+2 rows in set (0.00 sec)
+
+mysql> alter table student
+    -> drop column age;
+Query OK, 0 rows affected (0.66 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from student;
++-----+-------+------+---------+
+| sid | sname | city | pincode |
++-----+-------+------+---------+
+|   1 | ANAND | Pune |  112233 |
+|   2 | ANA   | Pune |       0 |
++-----+-------+------+---------+
+2 rows in set (0.00 sec)
+
+mysql> alter table student
+    -> add age int;
+Query OK, 0 rows affected (0.32 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from student;
++-----+-------+------+---------+------+
+| sid | sname | city | pincode | age  |
++-----+-------+------+---------+------+
+|   1 | ANAND | Pune |  112233 | NULL |
+|   2 | ANA   | Pune |       0 | NULL |
++-----+-------+------+---------+------+
+2 rows in set (0.00 sec)
+
+mysql> desc student;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| sid     | int         | NO   | PRI | NULL    |       |
+| sname   | varchar(25) | NO   |     | NULL    |       |
+| city    | varchar(20) | YES  |     | NULL    |       |
+| pincode | int         | YES  |     | 0       |       |
+| age     | int         | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> alter table student
+    -> modify sname varchar(20);
+Query OK, 2 rows affected (1.27 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> desc student;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| sid     | int         | NO   | PRI | NULL    |       |
+| sname   | varchar(20) | YES  |     | NULL    |       |
+| city    | varchar(20) | YES  |     | NULL    |       |
+| pincode | int         | YES  |     | 0       |       |
+| age     | int         | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> alter table student
+    -> modify sname varchar(4);
+ERROR 1265 (01000): Data truncated for column 'sname' at row 1
+mysql> select * from student;
++-----+-------+------+---------+------+
+| sid | sname | city | pincode | age  |
++-----+-------+------+---------+------+
+|   1 | ANAND | Pune |  112233 | NULL |
+|   2 | ANA   | Pune |       0 | NULL |
++-----+-------+------+---------+------+
+2 rows in set (0.00 sec)
+
+mysql> 
+mysql> alter table student
+    -> change sname student_name varchar(15);
+Query OK, 2 rows affected (1.23 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> desc student;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| sid          | int         | NO   | PRI | NULL    |       |
+| student_name | varchar(15) | YES  |     | NULL    |       |
+| city         | varchar(20) | YES  |     | NULL    |       |
+| pincode      | int         | YES  |     | 0       |       |
+| age          | int         | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> 
+mysql> alter table student
+    -> rename to students;
+Query OK, 0 rows affected (0.27 sec)
+
+mysql> desc students;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| sid          | int         | NO   | PRI | NULL    |       |
+| student_name | varchar(15) | YES  |     | NULL    |       |
+| city         | varchar(20) | YES  |     | NULL    |       |
+| pincode      | int         | YES  |     | 0       |       |
+| age          | int         | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> show tables;
++------------------+
+| Tables_in_ditiss |
++------------------+
+| bonus            |
+| course           |
+| customer         |
+| dept             |
+| dummy            |
+| emp              |
+| emp1             |
+| orders           |
+| orders1          |
+| salgrade         |
+| student1         |
+| student3         |
+| students         |
++------------------+
+13 rows in set (0.00 sec)
+
+mysql> desc emp;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| EMPNO    | int          | NO   |     | NULL    |       |
+| ENAME    | varchar(10)  | YES  |     | NULL    |       |
+| JOB      | varchar(9)   | YES  |     | NULL    |       |
+| MGR      | int          | YES  |     | NULL    |       |
+| HIREDATE | date         | YES  |     | NULL    |       |
+| SAL      | decimal(7,2) | YES  |     | NULL    |       |
+| COMM     | decimal(7,2) | YES  |     | NULL    |       |
+| DEPTNO   | int          | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> alter table emp
+    -> add PRIMARY KEY (EMPNO);
+Query OK, 0 rows affected (1.08 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc emp;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| EMPNO    | int          | NO   | PRI | NULL    |       |
+| ENAME    | varchar(10)  | YES  |     | NULL    |       |
+| JOB      | varchar(9)   | YES  |     | NULL    |       |
+| MGR      | int          | YES  |     | NULL    |       |
+| HIREDATE | date         | YES  |     | NULL    |       |
+| SAL      | decimal(7,2) | YES  |     | NULL    |       |
+| COMM     | decimal(7,2) | YES  |     | NULL    |       |
+| DEPTNO   | int          | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> desc DEPT;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| DEPTNO | int         | YES  |     | NULL    |       |
+| DNAME  | varchar(14) | YES  |     | NULL    |       |
+| LOC    | varchar(13) | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> 
+mysql> alter table DEPT
+    -> add PRIMARY KEY (DEPTNO);
+Query OK, 0 rows affected (1.55 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc DEPT;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| DEPTNO | int         | NO   | PRI | NULL    |       |
+| DNAME  | varchar(14) | YES  |     | NULL    |       |
+| LOC    | varchar(13) | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> ALTER TABLE EMP
+    -> ADD CONSTRAINT fk_EMP
+    -> FOREIGN KEY (DEPTNO)
+    -> REFERENCES DEPT(DEPTNO);
+Query OK, 14 rows affected (1.48 sec)
+Records: 14  Duplicates: 0  Warnings: 0
+
+mysql> DESC EMP;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| EMPNO    | int          | NO   | PRI | NULL    |       |
+| ENAME    | varchar(10)  | YES  |     | NULL    |       |
+| JOB      | varchar(9)   | YES  |     | NULL    |       |
+| MGR      | int          | YES  |     | NULL    |       |
+| HIREDATE | date         | YES  |     | NULL    |       |
+| SAL      | decimal(7,2) | YES  |     | NULL    |       |
+| COMM     | decimal(7,2) | YES  |     | NULL    |       |
+| DEPTNO   | int          | YES  | MUL | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> system cls
+mysql> create user ganesh identified by ganesh123;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ganesh123' at line 1
+mysql> create user ganesh identified by 'ganesh123';
+Query OK, 0 rows affected (0.14 sec)
+
+mysql> grant select on ditiss.emp to 'ganesh'@'localhost';
+ERROR 1410 (42000): You are not allowed to create a user with GRANT
+mysql> use ditiss;
+Database changed
+mysql> show tables;
++------------------+
+| Tables_in_ditiss |
++------------------+
+| bonus            |
+| course           |
+| customer         |
+| dept             |
+| dummy            |
+| emp              |
+| emp1             |
+| orders           |
+| orders1          |
+| salgrade         |
+| student1         |
+| student3         |
+| students         |
++------------------+
+13 rows in set (0.00 sec)
+
+mysql> grant select on emp to ganesh;
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> revoke select on emp from ganesh;
+Query OK, 0 rows affected (0.09 sec)
+
+mysql> 
+mysql> 
+mysql> 
+mysql> 
+
+mysql> CREATE TABLE supplier (
+    ->     sid int AUTO_INCREMENT PRIMARY KEY,
+    ->     sName varchar(255) NOT NULL,
+    ->     city varchar(255)
+    -> );
+Query OK, 0 rows affected (1.02 sec)
+
+mysql> insert into supplier (sname,city) values ('ANAND','Pune');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into supplier (sname,city) values ('Ram','Pune');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from supplier;
++-----+-------+------+
+| sid | sName | city |
++-----+-------+------+
+|   1 | ANAND | Pune |
+|   2 | Ram   | Pune |
++-----+-------+------+
+2 rows in set (0.00 sec)
+
+mysql> insert into supplier  values (5,'Sham','Pune');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from supplier;
++-----+-------+------+
+| sid | sName | city |
++-----+-------+------+
+|   1 | ANAND | Pune |
+|   2 | Ram   | Pune |
+|   5 | Sham  | Pune |
++-----+-------+------+
+3 rows in set (0.00 sec)
+
+mysql> insert into supplier (sname,city) values ('Sagar','Pune');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from supplier;
++-----+-------+------+
+| sid | sName | city |
++-----+-------+------+
+|   1 | ANAND | Pune |
+|   2 | Ram   | Pune |
+|   5 | Sham  | Pune |
+|   6 | Sagar | Pune |
++-----+-------+------+
+4 rows in set (0.00 sec)
+
+mysql> insert into supplier  values (7,'ramesh','Pune'),(8,'RAJ','PUNE');
+Query OK, 2 rows affected (0.00 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from supplier;
++-----+--------+------+
+| sid | sName  | city |
++-----+--------+------+
+|   1 | ANAND  | Pune |
+|   2 | Ram    | Pune |
+|   5 | Sham   | Pune |
+|   6 | Sagar  | Pune |
+|   7 | ramesh | Pune |
+|   8 | RAJ    | PUNE |
++-----+--------+------+
+6 rows in set (0.00 sec)
+
+mysql> create table sup1 as select * from supplier where 1=2;
+Query OK, 0 rows affected (0.41 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select sup1;
+ERROR 1054 (42S22): Unknown column 'sup1' in 'field list'
+mysql> select * from sup1;
+Empty set (0.00 sec)
+
+mysql> desc sup1;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| sid   | int          | NO   |     | 0       |       |
+| sName | varchar(255) | NO   |     | NULL    |       |
+| city  | varchar(255) | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> insert into sup1  select * from supplier;
+Query OK, 6 rows affected (0.00 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+mysql> select * from sup1;
++-----+--------+------+
+| sid | sName  | city |
++-----+--------+------+
+|   1 | ANAND  | Pune |
+|   2 | Ram    | Pune |
+|   5 | Sham   | Pune |
+|   6 | Sagar  | Pune |
+|   7 | ramesh | Pune |
+|   8 | RAJ    | PUNE |
++-----+--------+------+
+6 rows in set (0.00 sec)
+
+mysql> show tables;
++------------------+
+| Tables_in_ditiss |
++------------------+
+| bonus            |
+| course           |
+| customer         |
+| dept             |
+| dummy            |
+| emp              |
+| emp1             |
+| orders           |
+| orders1          |
+| salgrade         |
+| student1         |
+| student3         |
+| students         |
+| sup1             |
+| supplier         |
++------------------+
+15 rows in set (0.00 sec)
+
+mysql> select * from emp;
++-------+--------+-----------+------+------------+---------+---------+--------+
+| EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
++-------+--------+-----------+------+------------+---------+---------+--------+
+|  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800.00 |    NULL |     20 |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |
+|  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850.00 |    NULL |     30 |
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450.00 |    NULL |     10 |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1982-12-09 | 3000.00 |    NULL |     20 |
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000.00 |    NULL |     10 |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500.00 |    0.00 |     30 |
+|  7876 | ADAMS  | CLERK     | 7788 | 1983-01-12 | 1100.00 |    NULL |     20 |
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000.00 |    NULL |     20 |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300.00 |    NULL |     10 |
++-------+--------+-----------+------+------------+---------+---------+--------+
+14 rows in set (0.00 sec)
+
+mysql> create view view_emp
+    -> as
+    -> select empno,ename,job,deptno
+    -> from emp;
+Query OK, 0 rows affected (0.14 sec)
+
+mysql> show tables;
++------------------+
+| Tables_in_ditiss |
++------------------+
+| bonus            |
+| course           |
+| customer         |
+| dept             |
+| dummy            |
+| emp              |
+| emp1             |
+| orders           |
+| orders1          |
+| salgrade         |
+| student1         |
+| student3         |
+| students         |
+| sup1             |
+| supplier         |
+| view_emp         |
++------------------+
+16 rows in set (0.00 sec)
+
+mysql> select * from view_emp;
++-------+--------+-----------+--------+
+| empno | ename  | job       | deptno |
++-------+--------+-----------+--------+
+|  7369 | SMITH  | CLERK     |     20 |
+|  7499 | ALLEN  | SALESMAN  |     30 |
+|  7521 | WARD   | SALESMAN  |     30 |
+|  7566 | JONES  | MANAGER   |     20 |
+|  7654 | MARTIN | SALESMAN  |     30 |
+|  7698 | BLAKE  | MANAGER   |     30 |
+|  7782 | CLARK  | MANAGER   |     10 |
+|  7788 | SCOTT  | ANALYST   |     20 |
+|  7839 | KING   | PRESIDENT |     10 |
+|  7844 | TURNER | SALESMAN  |     30 |
+|  7876 | ADAMS  | CLERK     |     20 |
+|  7900 | JAMES  | CLERK     |     30 |
+|  7902 | FORD   | ANALYST   |     20 |
+|  7934 | MILLER | CLERK     |     10 |
++-------+--------+-----------+--------+
+14 rows in set (0.00 sec)
+
+mysql> update view_emp 
+    -> set job='HR'
+    -> where ename='SMITH';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from view_emp;
++-------+--------+-----------+--------+
+| empno | ename  | job       | deptno |
++-------+--------+-----------+--------+
+|  7369 | SMITH  | HR        |     20 |
+|  7499 | ALLEN  | SALESMAN  |     30 |
+|  7521 | WARD   | SALESMAN  |     30 |
+|  7566 | JONES  | MANAGER   |     20 |
+|  7654 | MARTIN | SALESMAN  |     30 |
+|  7698 | BLAKE  | MANAGER   |     30 |
+|  7782 | CLARK  | MANAGER   |     10 |
+|  7788 | SCOTT  | ANALYST   |     20 |
+|  7839 | KING   | PRESIDENT |     10 |
+|  7844 | TURNER | SALESMAN  |     30 |
+|  7876 | ADAMS  | CLERK     |     20 |
+|  7900 | JAMES  | CLERK     |     30 |
+|  7902 | FORD   | ANALYST   |     20 |
+|  7934 | MILLER | CLERK     |     10 |
++-------+--------+-----------+--------+
+14 rows in set (0.00 sec)
+
+mysql> select * from emp;
++-------+--------+-----------+------+------------+---------+---------+--------+
+| EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
++-------+--------+-----------+------+------------+---------+---------+--------+
+|  7369 | SMITH  | HR        | 7902 | 1980-12-17 |  800.00 |    NULL |     20 |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |
+|  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850.00 |    NULL |     30 |
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450.00 |    NULL |     10 |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1982-12-09 | 3000.00 |    NULL |     20 |
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000.00 |    NULL |     10 |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500.00 |    0.00 |     30 |
+|  7876 | ADAMS  | CLERK     | 7788 | 1983-01-12 | 1100.00 |    NULL |     20 |
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000.00 |    NULL |     20 |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300.00 |    NULL |     10 |
++-------+--------+-----------+------+------------+---------+---------+--------+
+14 rows in set (0.00 sec)
+
+
+mysql> drop view view_emp;
+Query OK, 0 rows affected (0.11 sec)
+
+mysql> select * from emp;
++-------+--------+-----------+------+------------+---------+---------+--------+
+| EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
++-------+--------+-----------+------+------------+---------+---------+--------+
+|  7369 | SMITH  | HR        | 7902 | 1980-12-17 |  800.00 |    NULL |     20 |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |
+|  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850.00 |    NULL |     30 |
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450.00 |    NULL |     10 |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1982-12-09 | 3000.00 |    NULL |     20 |
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000.00 |    NULL |     10 |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500.00 |    0.00 |     30 |
+|  7876 | ADAMS  | CLERK     | 7788 | 1983-01-12 | 1100.00 |    NULL |     20 |
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000.00 |    NULL |     20 |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300.00 |    NULL |     10 |
++-------+--------+-----------+------+------------+---------+---------+--------+
+14 rows in set (0.00 sec)
+
+mysql> CREATE INDEX emp_index1
+    -> ON emp (ename);
+Query OK, 0 rows affected (0.28 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> exit
