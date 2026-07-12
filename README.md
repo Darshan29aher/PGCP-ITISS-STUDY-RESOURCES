@@ -1,8 +1,18 @@
-# DITISS Study Resources
+# CCME CCEE MCQ PRACTICE QS
 
-Welcome to the **DITISS Study Resources** repository! 🎯
+- FCN - https://fcn-mcq-darshan.netlify.app/
+- COSA - https://cosa-mcq-darshan.netlify.app/
+- ITIM & DEVOPS - https://itim-devops-mcq-darshan.netlify.app/
+- PYTHON & SQL - https://python-sql-mcq-darshan.netlify.app/
+- NDC & COMPLIANCE AUDIT - https://ndc-complianceaudit-mcq-darshan.netlify.app/
+- PKI & CYBER FORENSIC - https://pki-cyberforensic-mcq-darshan.netlify.app/
+- SECURITY CONCEPTS - https://security-concepts-mcq-darshan.netlify.app/
 
-This repository contains comprehensive study notes, case studies, and important concepts from the **PG-DITISS (Post Graduate Diploma in IT Infrastructure, Systems, and Security)** course at **Sunbeam Institute of Information Technology, Pune**. It’s a collection of meticulously crafted notes designed to help my classmates and others understand key concepts effectively.
+# PGCP-ITISS Study Resources
+
+Welcome to the **ITISS Study Resources** repository! 🎯
+
+This repository contains comprehensive study notes, case studies, and important concepts from the **PGCP-DITISS (Post Graduate CERTIFICATION PROGRAMME in IT Infrastructure, Systems, and Security)** course at **IACSD, Pune**. It’s a collection of meticulously crafted notes designed to help my classmates and others understand key concepts effectively.
 
 ## 📚 Table of Contents
 
